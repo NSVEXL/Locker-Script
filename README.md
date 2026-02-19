@@ -17,8 +17,39 @@ The script simulates a basic authentication gateway. It prompts the user for thr
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git)
-    cd YOUR_REPO_NAME
+    #!/bin/bash
+
+# Initializing variables to store user input
+username=""
+companyname=""
+pin=""
+
+# Starting a loop to gather information in 3 steps
+for i in {1..3}; do
+    # Logic to prompt for different data based on the loop iteration
+    if [ "$i" -eq 1 ]; then
+        read -p "Enter your Username: " username
+    elif [ "$i" -eq 2 ]; then
+        read -p "Enter your Company name: " companyname
+    else
+        # Using -s flag is recommended for PINs, but keeping it simple for the exercise
+        read -p "Enter your PIN: " pin
+    fi
+done
+
+# Validating the credentials against hardcoded values
+if [ "$username" = "Neo" ] && [ "$companyname" = "Matrix" ] && [ "$pin" = "0123" ]; then
+    echo "---------------------------------------"
+    echo "Authentication Successful."
+    echo "Access granted. Welcome back, Neo."
+    echo "---------------------------------------"
+else
+    echo "---------------------------------------"
+    echo "Authentication Denied!!"
+    echo "Invalid credentials. Access rejected."
+    echo "---------------------------------------"
+    exit 1
+fi
     ```
 
 2.  **Grant execution permissions:**
