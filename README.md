@@ -19,13 +19,13 @@ The script simulates a basic authentication gateway. It prompts the user for thr
     ```bash
     #!/bin/bash
 
-# Initializing variables to store user input
-username=""
-companyname=""
-pin=""
+    # Initializing variables to store user input
+    username=""
+    companyname=""
+    pin=""
 
-# Starting a loop to gather information in 3 steps
-for i in {1..3}; do
+    #    Starting a loop to gather information in 3 steps
+    for i in {1..3}; do
     # Logic to prompt for different data based on the loop iteration
     if [ "$i" -eq 1 ]; then
         read -p "Enter your Username: " username
@@ -35,21 +35,21 @@ for i in {1..3}; do
         # Using -s flag is recommended for PINs, but keeping it simple for the exercise
         read -p "Enter your PIN: " pin
     fi
-done
+    done
 
-# Validating the credentials against hardcoded values
-if [ "$username" = "Neo" ] && [ "$companyname" = "Matrix" ] && [ "$pin" = "0123" ]; then
+    # Validating the credentials against hardcoded values
+    if [ "$username" = "Neo" ] && [ "$companyname" = "Matrix" ] && [ "$pin" = "0123" ]; then
     echo "---------------------------------------"
     echo "Authentication Successful."
     echo "Access granted. Welcome back, Neo."
     echo "---------------------------------------"
-else
+    else
     echo "---------------------------------------"
     echo "Authentication Denied!!"
     echo "Invalid credentials. Access rejected."
     echo "---------------------------------------"
     exit 1
-fi
+    fi
     ```
 
 2.  **Grant execution permissions:**
@@ -59,7 +59,7 @@ fi
 
 3.  **Run the script:**
     ```bash
-    ./authentication.sh
+    ./locker_script.sh
     ```
 
 ## 📝 Disclaimer
