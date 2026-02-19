@@ -54,7 +54,7 @@ The script simulates a basic authentication gateway. It prompts the user for thr
 
 2.  **Grant execution permissions:**
     ```bash
-    chmod +x authentication.sh
+    chmod +x locker_script.sh
     ```
 
 3.  **Run the script:**
